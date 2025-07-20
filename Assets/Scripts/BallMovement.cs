@@ -38,7 +38,7 @@ public class BallMovement : MonoBehaviour
 
     public void IncreaseCount()
     {
-        if (this.count * increase + speed > maxSpeed)
+        if (this.count * increase + speed < maxSpeed)
         {
             this.count++;
         }
