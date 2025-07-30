@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallMovement : MonoBehaviour
@@ -16,15 +17,16 @@ public class BallMovement : MonoBehaviour
 
     public IEnumerator InitBall(bool playerStarts = true)
     {
-        this.count = 0;
+        this.ResetBall(playerStarts);
+        count = 0;
         yield return new WaitForSeconds(2);
         if (playerStarts)
         {
-            this.MoveBall(new Vector2(-1, 0));
+            MoveBall(new Vector2(-1, 0));
         }
         else
         {
-            this.MoveBall(new Vector2(1, 0));
+            MoveBall(new Vector2(1, 0));
         }
     }
 
@@ -32,15 +34,28 @@ public class BallMovement : MonoBehaviour
     {
         dir = dir.normalized;
         float currentSpeed = speed + (count * increase);
-        Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
         rb.linearVelocity = dir * currentSpeed;
     }
 
     public void IncreaseCount()
     {
-        if (this.count * increase + speed < maxSpeed)
+        if (count * increase + speed < maxSpeed)
         {
-            this.count++;
+            count++;
+        }
+    }
+
+    void ResetBall(bool playerStarts)
+    {
+        this.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
+        if(playerStarts)
+        {
+            gameObject.transform.localPosition = new Vector3(-100, 0, 10);
+        }
+        else
+        {
+            gameObject.transform.localPosition = new Vector3(100, 0, 10);
         }
     }
 }
