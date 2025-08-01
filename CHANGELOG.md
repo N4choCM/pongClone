@@ -2,7 +2,7 @@
 
 ## Features
 
-### 0.4.0
+### 0.5.0
 
 - ✅ ADDED: Sounds for Ball and Wall collisions
 - ✅ ADDED: CPU Paddle automatic movement based on the Ball moves
