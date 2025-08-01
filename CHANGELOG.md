@@ -2,6 +2,12 @@
 
 ## Features
 
+### 0.6.0
+
+- ✅ ADDED: Documentation
+
+## Features
+
 ### 0.5.0
 
 - ✅ ADDED: Sounds for Ball and Wall collisions
