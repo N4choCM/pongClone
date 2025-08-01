@@ -21,6 +21,7 @@ public class Scoring : MonoBehaviour
         }
     }
 
+    // FixedUpdate is called at a fixed interval and is used for physics calculations
     private void FixedUpdate()
     {
         Text playerScoreTag = playerScoreText.GetComponent<Text>();
@@ -29,11 +30,13 @@ public class Scoring : MonoBehaviour
         cpuScoreTag.text = cpuScore.ToString();
     }
 
+    // Increases the player's score by 1
     public void AddPlayerScore()
     {
         playerScore++;
     }
 
+    // Increases the CPU's score by 1
     public void AddCpuScore()
     {
         cpuScore++;
