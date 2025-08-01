@@ -1,21 +1,27 @@
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CPUPaddle : MonoBehaviour
 {
     public float speed;
-    private Rigidbody2D rb;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    public GameObject ball;
 
     private void FixedUpdate()
     {
-        float up  = Keyboard.current.wKey.isPressed  ? 1f : 0f;
-        float down = Keyboard.current.sKey.isPressed ? -1f : 0f;
-        float v = up + down;
-        rb.linearVelocity = new Vector2(0f, v * speed);
+        if (MathF.Abs(this.transform.position.y - ball.transform.position.y) > 50)
+        {
+            if (transform.position.y < ball.transform.position.y)
+            {
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 1) * speed;
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -1) * speed;
+            }
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
+        }
     }
 }
