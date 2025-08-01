@@ -1,8 +1,14 @@
 # 📅 01/08/2025
 
+## Fxes
+
+### 1.0.1
+
+- 👾 FIXED: Aspect Ratio set to 960x600
+
 ## Deploys
 
-### 0.1.0
+### 1.0.0
 
 - 🚀 v. 0.1.0 into main!
 
