@@ -1,3 +1,21 @@
+# 📅 01/08/2025
+
+## Features
+
+### 0.4.0
+
+- ✅ ADDED: Sounds for Ball and Wall collisions
+- ✅ ADDED: CPU Paddle automatic movement based on the Ball moves
+
+# 📅 30/07/2025
+
+## Features
+
+### 0.4.0
+
+- ✅ ADDED: Scoring System
+- ✅ ADDED: Final Screen
+
 # 📅 20/07/2025
 
 ## Features
